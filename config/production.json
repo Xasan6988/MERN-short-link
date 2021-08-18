@@ -1,6 +1,6 @@
 {
   "port": 80,
   "jwtSecret": "galchan gal chan",
-  "mongoUri": "mongodb+srv://Gal_chan:skorosvoboda666@cluster0.fifz0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "mongoUri": "mongodb+srv://<user>:<password>@cluster0.fifz0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   "baseUrl": "http://newchoice26.site"
 }
