@@ -5,6 +5,7 @@ import {CreatePage} from './pages/CreatePage.js';
 import {DetailPage} from './pages/DetailPage.js';
 import {AuthPage} from './pages/AuthPage.js';
 
+// отобращение клиентских роутов в зависимости от авторизованности пользователя
 export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
     return (

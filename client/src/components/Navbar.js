@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext';
 export const Navbar = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-
+  // при нажатии на логаут выходим с аккаунта и редиректим на главную
   const logoutHandler = e => {
     e.preventDefault();
     auth.logout();

@@ -4,34 +4,38 @@ import { useHttp } from '../hooks/http.hook';
 import { useMessage } from '../hooks/message.hook.js';
 
 export const AuthPage = () => {
+  // достаём данные авторизации из контекста
   const auth = useContext(AuthContext);
+  // метод для вывода сообщений
   const message = useMessage();
+  // методы и данные запросов
   const {loading, error, request, clearError} = useHttp();
+  // стэйт формы
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
-
+  // если есть ошибка - то выводим и чистим
   useEffect(() => {
     message(error);
     clearError();
   }, [error, message, clearError]);
-
+  // приводим инпуты в активное состояние
   useEffect(() => {
     window.M.updateTextFields();
   }, []);
-
+  // устанавливаем введёные в форму значения в стейт
   const changeHandler = e => {
     setForm({...form, [e.target.name]: e.target.value});
   };
-
+  // отправляем введёные данные на сервер регистрации
   const registerHandler = async () => {
     try {
       const data = await request('/api/auth/register', 'POST', {...form});
-      message(data.message)
+      message(data.message)ж
     } catch (e) {}
   };
-
+  // отправляем введёные данные на сервер авторизации
   const loginHandler = async () => {
     try {
       const data = await request('/api/auth/login', 'POST', {...form});
