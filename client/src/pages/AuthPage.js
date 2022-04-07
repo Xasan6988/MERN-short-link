@@ -32,7 +32,7 @@ export const AuthPage = () => {
   const registerHandler = async () => {
     try {
       const data = await request('/api/auth/register', 'POST', {...form});
-      message(data.message)ж
+      message(data.message);
     } catch (e) {}
   };
   // отправляем введёные данные на сервер авторизации
